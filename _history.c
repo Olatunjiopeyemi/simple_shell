@@ -24,7 +24,7 @@ char *get_history_file(info_t *info)
 }
 
 /**
- * write_history - A function that creates a file, or appends to an existing file
+ * write_history - A function that creates a file, or appends to file
  * @info: the parameter struct
  * Return: 1 or -1
  */
@@ -60,15 +60,15 @@ int write_history(info_t *info)
 
 int renumber_history(info_t *info)
 {
-        list_t *node = info->history;
-        int a = 0;
+	list_t *node = info->history;
+	int a = 0;
 
-        while (node)
-        {
-                node->num = a++;
-                node = node->next;
-        }
-        return (info->histcount = a);
+	while (node)
+	{
+		node->num = a++;
+		node = node->next;
+	}
+	return (info->histcount = a);
 }
 
 /**
@@ -81,15 +81,15 @@ int renumber_history(info_t *info)
 
 int build_history_list(info_t *info, char *buf, int linecount)
 {
-        list_t *node = NULL;
+	list_t *node = NULL;
 
-        if (info->history)
-                node = info->history;
-        add_node_end(&node, buf, linecount);
+	if (info->history)
+		node = info->history;
+	add_node_end(&node, buf, linecount);
 
-        if (!info->history)
-                info->history = node;
-        return (0);
+	if (!info->history)
+		info->history = node;
+	return (0);
 }
 
 
@@ -139,3 +139,5 @@ int read_history(info_t *info)
 	while (info->histcount-- >= HIST_MAX)
 		delete_node_at_index(&(info->history), 0);
 	renumber_history(info);
+	return (info->histcount);
+}
