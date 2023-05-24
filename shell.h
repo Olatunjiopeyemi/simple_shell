@@ -42,18 +42,6 @@ typedef struct liststr
 } list_t;
 
 /**
- * struct builtin -> handles builtin functions
- * @type: builtin commands
- * @func: function
- */
-typedef struct builtin
-{
-	char *type;
-	int (*func)(info_t *);
-} builtin_table;
-
-/**
- * struct passinfo -> maintains argument format
  * @arg: arguments passed
  * @path: full path for command
  * @argv: array of arguments passed
@@ -98,8 +86,19 @@ typedef struct passinfo
 } info_t;
 
 #define INFO_INIT \
-{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-	0, 0, 0}
+{NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 0,\
+	NULL, 0, 0}
+
+/**
+ * struct builtin -> handles builtin functions
+ * @type: builtin commands
+ * @func: function
+ */
+typedef struct builtin
+{
+        char *type;
+        int (*func)(info_t *);
+} builtin_table;
 
 void find_cmd(info_t *);
 void fork_cmd(info_t *);

@@ -114,7 +114,7 @@ int read_history(info_t *info)
 	if (filedes == -1)
 		return (0);
 	if (!fstat(filedes, &st))
-		fsize = st.st_size;
+		filesize = st.st_size;
 	if (filesize < 2)
 		return (0);
 	buffer = malloc(sizeof(char) * (filesize + 1));

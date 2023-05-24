@@ -71,9 +71,9 @@ int _putsfd(char *str, int fd)
 {
 	int a = 0;
 
-	if (str == NULL)
+	if (!str)
 		return (0);
-	while (*str != NULL)
+	while (*str)
 	{
 		a += _putfd(*str++, fd);
 	}
