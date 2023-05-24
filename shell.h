@@ -42,6 +42,7 @@ typedef struct liststr
 } list_t;
 
 /**
+ * struct passinfo -> allows arguments to be passed
  * @arg: arguments passed
  * @path: full path for command
  * @argv: array of arguments passed
@@ -96,8 +97,8 @@ typedef struct passinfo
  */
 typedef struct builtin
 {
-        char *type;
-        int (*func)(info_t *);
+	char *type;
+	int (*func)(info_t *);
 } builtin_table;
 
 void find_cmd(info_t *);
