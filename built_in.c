@@ -1,9 +1,9 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * _myexit - a function that aids the exits the shell
  * @info: a struct that contains potential arguments
- *  Return: exits with an exit status or 0
+ * Return: exits with an exit status or 0
  */
 int _myexit(info_t *info)
 {

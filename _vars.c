@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * replace_string - function that replaces a string

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * is_cmd -> checks if file is executable
@@ -49,7 +49,7 @@ char *dup_chars(char *pathstr, int start, int stop)
  */
 char *find_path(info_t *info, char *pathstr, char *cmd)
 {
-	int a = 0, cur_pos = 0;
+	int a = 0, pos = 0;
 	char *path;
 
 	if (!pathstr)
@@ -63,7 +63,7 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 	{
 		if (!pathstr[a] || pathstr[a] == ':')
 		{
-			path = dup_chars(pathstr, cur_pos, a);
+			path = dup_chars(pathstr, pos, a);
 			if (!*path)
 				_strcat(path, cmd);
 			else
@@ -75,7 +75,7 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 				return (path);
 			if (!pathstr[a])
 				break;
-			cur_pos = a;
+			pos = a;
 		}
 		a++;
 	}

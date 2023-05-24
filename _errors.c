@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  *_eputs - A function that prints an inputted string
@@ -26,15 +26,15 @@ void _eputs(char *str)
 int _eputchar(char c)
 {
 	static int a;
-	static char buffer[WRITE_BUFFER_SIZE];
+	static char buf[WRITE_BUF_SIZE];
 
-	if (c == BUF_FLUSH || a >= WRITE_BUFFER_SIZE)
+	if (c == BUF_FLUSH || a >= WRITE_BUF_SIZE)
 	{
-		write(2, buffer, a);
+		write(2, buf, a);
 		a = 0;
 	}
 	if (c != BUF_FLUSH)
-		buffer[a++] = c;
+		buf[a++] = c;
 	return (1);
 }
 
@@ -48,15 +48,15 @@ int _eputchar(char c)
 int _putfd(char c, int fd)
 {
 	static int a;
-	static char buffer[WRITE_BUFFER_SIZE];
+	static char buf[WRITE_BUF_SIZE];
 
-	if (c == BUF_FLUSH || a >= WRITE_BUFFER_SIZE)
+	if (c == BUF_FLUSH || a >= WRITE_BUF_SIZE)
 	{
-		write(fd, buffer, a);
+		write(fd, buf, a);
 		a = 0;
 	}
 	if (c != BUF_FLUSH)
-		buffer[a++] = c;
+		buf[a++] = c;
 	return (1);
 }
 

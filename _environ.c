@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * _myenv - A function that prints the current environment
@@ -37,7 +37,7 @@ char *_getenv(info_t *info, const char *name)
 /**
  * _mysetenv - A function that initializes a new environment variable
  * @info: A Struct that contains potential arguments
- *  Return: 0
+ * Return: 0
  */
 
 int _mysetenv(info_t *info)

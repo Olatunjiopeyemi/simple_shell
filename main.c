@@ -1,10 +1,10 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * main -> the start of the program
  * @ac: number of arguments
  * @av: array of arguments
- * Return: 0 or 1 on error
+ * Return: 0 or 1
  */
 int main(int ac, char **av)
 {

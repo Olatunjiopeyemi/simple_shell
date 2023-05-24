@@ -1,8 +1,8 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * clear_info - A function that clears a struct
- * @info:Address to struct
+ * @info: Address to struct
  */
 
 void clear_info(info_t *info)
@@ -49,7 +49,7 @@ void set_info(info_t *info, char **av)
 /**
  * free_info -A function that frees struct
  * @info: Address to struct
- * @all: true if freeing all fields
+ * @all: true
  */
 
 void free_info(info_t *info, int all)

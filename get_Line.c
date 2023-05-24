@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * input_buf -A function that buffers chained commands
@@ -59,7 +59,7 @@ ssize_t get_input(info_t *info)
 	n = input_buf(info, &buffer, &length);
 	if (n == -1)
 		return (-1);
-	if (length != NULL)
+	if (length)
 	{
 		b = a;
 		p = buffer + a;
@@ -98,7 +98,7 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 {
 	ssize_t n = 0;
 
-	if (*i != NULL)
+	if (*i)
 		return (0);
 	n = read(info->readfd, buf, READ_BUF_SIZE);
 	if (n >= 0)
@@ -116,7 +116,7 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 
 int _getline(info_t *info, char **ptr, size_t *length)
 {
-	static char buffer[READ_BUF_SIZE];
+	static char buf[READ_BUF_SIZE];
 	static size_t a, lent;
 	size_t k;
 	ssize_t r = 0, x = 0;
@@ -128,20 +128,20 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	if (a == lent)
 		a = lent = 0;
 
-	r = read_buf(info, buffer, &lent);
+	r = read_buf(info, buf, &lent);
 	if (r == -1 || (r == 0 && lent == 0))
 		return (-1);
 
-	c = _strchr(buffer + a, '\n');
-	k = c ? 1 + (unsigned int)(c - buffer) : lent;
+	c = _strchr(buf + a, '\n');
+	k = c ? 1 + (unsigned int)(c - buf) : lent;
 	new = _realloc(p, x, x ? x + k : k + 1);
-	if (new == NULL)
+	if (!new)
 		return (p ? free(p), -1 : -1);
 
 	if (x)
-		_strncat(new, buffer + a, k - a);
+		_strncat(new, buf + a, k - a);
 	else
-		_strncpy(new, buffer + a, k - a + 1);
+		_strncpy(new, buf + a, k - a + 1);
 
 	x += k - a;
 	a = k;

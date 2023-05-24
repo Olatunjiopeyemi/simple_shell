@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * _strcmp - compares two strangs.
@@ -59,7 +59,6 @@ char *starts_with(const char *haystack, const char *needle)
 /**
  * _strlen - length of a string
  * @s: the string to check
- *
  * Return: length of string
  */
 int _strlen(char *s)

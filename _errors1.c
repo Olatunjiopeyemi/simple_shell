@@ -1,9 +1,9 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * _erratoi - A function that converts a string into an integer
  * @s: the string to be converted
- * Return: 0,-1 or the converted integer
+ * Return: 0 or -1
  */
 
 int _erratoi(char *s)
@@ -32,7 +32,7 @@ int _erratoi(char *s)
  * print_error - A function that prints out an error message
  * @info: the parameter & return info struct
  * @estr: A string containing the specified error type
- * Return: 0,-1 or the converted number
+ * Return: 0 or 1
  */
 
 void print_error(info_t *info, char *estr)

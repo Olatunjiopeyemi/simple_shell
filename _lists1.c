@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * list_len -> gets the length of the linked list
@@ -29,10 +29,10 @@ char **list_to_strings(list_t *head)
 	char **strg;
 	char *str;
 
-	if (!head || !i)
+	if (!head || !a)
 		return (NULL);
 	strg = malloc(sizeof(char *) * (a + 1));
-	if (!strs)
+	if (!strg)
 		return (NULL);
 	for (a = 0; node; node = node->next, a++)
 	{

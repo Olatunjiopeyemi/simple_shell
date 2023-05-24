@@ -1,8 +1,8 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * get_history_file -  A function that gets a history file
- * @info: parameter struct
+ * @info: info struct
  * Return: a string
  */
 
@@ -11,7 +11,7 @@ char *get_history_file(info_t *info)
 	char *buffer, *directory;
 
 	directory = _getenv(info, "HOME=");
-	if (directory == NULL)
+	if (!directory)
 		return (NULL);
 	buffer = malloc(sizeof(char) * (_strlen(directory) + _strlen(HIST_FILE) + 2));
 	if (!buffer)
@@ -115,17 +115,17 @@ int read_history(info_t *info)
 		return (0);
 	if (!fstat(filedes, &st))
 		fsize = st.st_size;
-	if (fsize < 2)
+	if (filesize < 2)
 		return (0);
-	buffer = malloc(sizeof(char) * (fsize + 1));
+	buffer = malloc(sizeof(char) * (filesize + 1));
 	if (!buffer)
 		return (0);
-	readlen = read(filedes, buffer, fsize);
-	buffer[fsize] = 0;
+	readlen = read(filedes, buffer, filesize);
+	buffer[filesize] = 0;
 	if (readlen <= 0)
 		return (free(buffer), 0);
 	close(filedes);
-	for (a = 0; a < fsize; a++)
+	for (a = 0; a < filesize; a++)
 		if (buffer[a] == '\n')
 		{
 			buffer[a] = 0;

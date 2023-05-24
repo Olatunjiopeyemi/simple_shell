@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * interactive - a function that return true if interactive
@@ -51,7 +51,7 @@ int _atoi(char *s)
 	int a, sign = 1, flag = 0, product;
 	unsigned int result = 0;
 
-	for (a = 0;  s[a] != '\0' && flag != 2; i++)
+	for (a = 0;  s[a] != '\0' && flag != 2; a++)
 	{
 		if (s[a] == '-')
 			sign *= -1;

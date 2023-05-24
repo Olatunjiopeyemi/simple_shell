@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * hsh -> shell
@@ -18,7 +18,7 @@ int hsh(info_t *info, char **av)
 		if (interactive(info))
 			_puts("KO$ ");
 		_eputchar(BUF_FLUSH);
-		r = get_input(info);
+		s = get_input(info);
 		if (s != -1)
 		{
 			set_info(info, av);

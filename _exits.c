@@ -1,10 +1,10 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  **_strncpy - A function that copies a string
  *@dest: the destination to copy to
  *@src: the source where the string is copied from
- *@n: the amount of characters to be copied
+ *@n: character amount to be copied
  *Return: dest
  */
 
@@ -60,10 +60,10 @@ char *_strncat(char *dest, char *src, int n)
 }
 
 /**
- **_strchr - A function that locates a character
- *@s: parsed string
- *@c: the character to locate
- *Return: a pointer to the memory
+ * _strchr - A function that locates a character
+ * @s: parsed string
+ * @c: the character to locate
+ * Return: a pointer to the memory
  */
 
 char *_strchr(char *s, char c)

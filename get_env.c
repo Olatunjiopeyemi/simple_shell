@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * get_environ - A function that returns the string array copy of our environ
@@ -54,7 +54,7 @@ int _unsetenv(info_t *info, char *var)
  * @info: Structure containing potential arguments
  * @var: the string environ variable
  * @value: the string environ variable value
- *  Return: 0
+ * Return: 0
  */
 
 int _setenv(info_t *info, char *var, char *value)

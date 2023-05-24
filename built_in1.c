@@ -1,9 +1,9 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * _myhistory - A function that displays history list starting at 0
  * @info: A Struct contains potential arguments
- *  Return: 0
+ * Return: 0
  */
 int _myhistory(info_t *info)
 {
@@ -100,7 +100,7 @@ int _myalias(info_t *info)
 	{
 		b = _strchr(info->argv[a], '=');
 		if (b)
-			set_alias(info, info->argv[i]);
+			set_alias(info, info->argv[a]);
 		else
 			print_alias(node_starts_with(info->alias, info->argv[a], '='));
 	}
