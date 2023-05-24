@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 /**
  * interactive - a function that return true if interactive
