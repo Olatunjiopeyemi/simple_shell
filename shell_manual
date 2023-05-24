@@ -1,0 +1,52 @@
+WHAT IS A SHELL?
+	A shell can be defined simply as a macro processor that executes commands. The Unix shell is both a command interpreter and a programming language.
+
+Shell can be used in an interactive or non-interactive mode. The shell accepts input typed from the keyboard in the interactive mode when the shell reads commands from a file in the non-interactive mode.
+
+POSIX
+Bash is concerned primarily with the Shell and Utilities portion of the POSIX 1003.1 standard.
+
+blank
+A tab character or space as input from the keyboard.
+
+builtin
+Commands implemented internally by the shell itself, rather than by an executable program.
+
+control operator
+Special tokens that perform a control function usually in the following forms: ‘&&’, ‘&’, ‘||’, ‘;’, ‘;;’, ‘;&’, ‘|’, ‘|&’, ‘;;&’, ‘(’, or ‘)’.
+
+exit status
+The value returned by a command to its caller.
+
+field
+Text that is the result of one of the shell expansions. After expansion, when executing a command, the resulting fields are used as the command name and arguments.
+
+filename
+A string of characters that is used in identifying a file.
+
+operator
+Control operator also known as a redirection operator.
+
+process group
+Processes with the same process group ID.
+
+process group ID
+A unique identifier used to represent a process group during its lifetime.
+
+reserved word
+Special words with predefined meanings to the shell.
+
+return status
+Exit status.
+
+signal
+A mechanism by which a process may be notified by the kernel of an event occurring or has occured in the system.
+
+special builtin
+Builtin commands that have been classified as special by the POSIX standard.
+
+token
+Sequence of characters considered a single unit by the shell. It is either a word or an operator.
+
+word
+Sequence of characters treated as a unit by the shell.
